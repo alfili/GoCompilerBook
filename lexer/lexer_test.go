@@ -13,6 +13,9 @@ func TestNextToken(t *testing.T) {
 	};
 
 	let result = add(x, y);
+
+	!-/*<>
+
 	`
 
 	tests := []struct {
@@ -55,6 +58,12 @@ func TestNextToken(t *testing.T) {
 		{token.IDENTIFIER, "y"},
 		{token.RPAREN, ")"},
 		{token.SEMICOLON, ";"},
+		{token.BANG, "!"},
+		{token.MINUS, "-"},
+		{token.SLASH, "/"},
+		{token.ASTERISK, "*"},
+		{token.LT, "<"},
+		{token.GT, ">"},
 		{token.EOF, ""},
 	}
 
